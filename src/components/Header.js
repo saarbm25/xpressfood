@@ -4,11 +4,11 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { colors, parameters } from '../global/styles' 
 
-function Header({title}) {
+function Header({title, icon}) {
     return (
         <View style={styles.header}>
             <TouchableOpacity>
-                <MaterialCommunityIcons name='arrow-left' size={28} color={colors.grey5}></MaterialCommunityIcons>
+                <MaterialCommunityIcons name={icon} size={28} color={colors.grey5}></MaterialCommunityIcons>
             </TouchableOpacity>
                 <View>
                     <Text style={styles.headerText}>

@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import Header from './src/components/Header';
 import React from 'react';
 import { colors } from './src/global/styles';
+import SignInScreen from './src/screens/authScreens/SignInScreen';
 
 
 export default function App() {
@@ -10,7 +11,7 @@ export default function App() {
       <StatusBar
         barStyle='light-content'
         backgroundColor={colors.statusBar}></StatusBar>
-      <Header title='MY ACCOUNT'></Header>
+      <SignInScreen></SignInScreen>
     </View>
   );
 }

@@ -15,3 +15,11 @@ export const colors = {
 export const parameters = {
     headerHeight: 40,
 }
+
+export const globalStyles = StyleSheet.create({
+    title: {
+        color: colors.button,
+        fontWeight: 'bold',
+        fontSize: 22,
+    }
+})
