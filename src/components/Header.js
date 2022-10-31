@@ -6,14 +6,16 @@ import { colors, parameters } from '../global/styles'
 
 function Header({title}) {
     return (
-            <TouchableOpacity style={styles.header}>
+        <View style={styles.header}>
+            <TouchableOpacity>
                 <MaterialCommunityIcons name='arrow-left' size={28} color={colors.grey5}></MaterialCommunityIcons>
+            </TouchableOpacity>
                 <View>
                     <Text style={styles.headerText}>
                         {title}
                     </Text>
                 </View>
-            </TouchableOpacity>
+            </View>
     );
 }
 
