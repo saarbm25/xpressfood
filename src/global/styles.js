@@ -11,7 +11,8 @@ export const colors = {
     cardBackground: "white",
     statusBar: '#ff8c52',
     red: '#DB4437',
-    blue: '#3b5998'
+    blue: '#3b5998',
+    white: 'white',
 }
 
 export const parameters = {

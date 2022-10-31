@@ -3,10 +3,15 @@ import React from 'react';
 import { colors } from '../global/styles';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function AppButton({color = colors.button, textColor = colors.grey5, icon, children}) {
+export default function AppButton({ color = colors.button, textColor = colors.white, width = 'auto', inverted, icon, children }) {
+    if (inverted === true) {
+        const temp = color;
+        color = textColor;
+        textColor = temp;
+    }
   return (
-    <TouchableOpacity style={[styles.button, { backgroundColor: color }]}>
-        {icon && <MaterialCommunityIcons name={icon} size={28} color={colors.grey5} style={styles.icon}></MaterialCommunityIcons>}
+    <TouchableOpacity style={[styles.button, { backgroundColor: color, borderColor: textColor, width: width}]}>
+        {icon && <MaterialCommunityIcons name={icon} size={28} color={textColor} style={styles.icon}></MaterialCommunityIcons>}
         <Text style={[icon ? styles.iconButtonText : styles.buttonText, {color: textColor}]}>{children}</Text>
     </TouchableOpacity>
   )
@@ -20,6 +25,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         marginHorizontal: 10,
         padding: 8,
+        borderWidth: 1,
     },
     buttonText: {
         fontSize: 20,
