@@ -5,7 +5,11 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function AppTextInput({ children, placeholder, icon, secure }) {
     const [visable, useVisable] = useState(secure);
-    const changeVisibility = () => useVisable(!visable);
+    const [eye, useEye] = useState('eye');
+    const changeVisibility = () => {
+        useVisable(!visable);
+        eye === 'eye' ? useEye('eye-off') : useEye('eye');
+    };
   return (
       <View style={styles.container}>
           {icon && <MaterialCommunityIcons name={icon} size={22} color={colors.grey3} style={styles.icon}></MaterialCommunityIcons>}
@@ -16,7 +20,7 @@ export default function AppTextInput({ children, placeholder, icon, secure }) {
           >{visable}</TextInput>
           <TouchableOpacity
               onPress={changeVisibility}>
-              {secure && <MaterialCommunityIcons name={'eye'} size={22} color={colors.grey3} style={styles.secure}></MaterialCommunityIcons>}  
+              {secure && <MaterialCommunityIcons name={eye} size={22} color={colors.grey3} style={styles.secure}></MaterialCommunityIcons>}  
           </TouchableOpacity>
     </View>
   )
