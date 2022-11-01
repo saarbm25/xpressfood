@@ -8,7 +8,7 @@ function Header({title, icon}) {
     return (
         <View style={styles.header}>
             <TouchableOpacity>
-                <MaterialCommunityIcons name={icon} size={28} color={colors.grey5}></MaterialCommunityIcons>
+                <MaterialCommunityIcons name={icon} size={28} color={colors.white}></MaterialCommunityIcons>
             </TouchableOpacity>
                 <View>
                     <Text style={styles.headerText}>
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
     },
     headerText: {
-        color: colors.grey5,
+        color: colors.white,
         fontWeight: 'bold',
         fontSize: 22,
         marginLeft: 30,
